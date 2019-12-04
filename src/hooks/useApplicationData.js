@@ -69,9 +69,9 @@ const useApplicationData = () => {
           throw new Error("Socket error");
       }
     };
-    return () => {
-      socket.close();
-    };
+    // return () => {
+    //   socket.close();
+    // };
   }, [state]);
 
   const bookInterview = (id, interview) => {
