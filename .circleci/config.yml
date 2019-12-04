@@ -18,6 +18,21 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm test
+  deploy:
+    machine:
+      enabled: true
+  
+    working_directory: ~/client
+  
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "38:ed:64:fd:ac:78:ec:fa:3c:08:ec:9d:f6:27:87:71"
+      - checkout
+      - run:
+          name: Push Master to Production
+          command: |
+            git push https://github.com/lighthouse-labs/scheduler.git master:production
 
 workflows:
   version: 2
