@@ -4,6 +4,13 @@ React SPA application that allows users to book and cancel interviews. Data is p
 
 ## Setup
 
+Add .env.development file with :
+
+```
+PORT=8000
+CHOKIDAR_USEPOLLING=false
+```
+
 Install dependencies with `npm install`.
 
 ## Running Webpack Development Server
@@ -51,14 +58,13 @@ npm run cypress
 * A user is shown a status indicator while asynchronous operations are in progress.
 * When the user presses the close button of the error they are returned to the Add or Show view (skipping Status and Confirm).
 * The application makes API requests to load and persist data. We do not lose data after a browser refresh.
-* The client application communicates with a WebSocket server.
 * When a user books or cancels an interview, all connected users see the update in their browser.
 
 
 ## Technical Specifications
 * React
 * Webpack, Babel
-* Axios, WebSockets
+* Axios
 * Storybook, Webpack Dev Server, Jest, Testing Library, Cypress
 
 ## Final Product
